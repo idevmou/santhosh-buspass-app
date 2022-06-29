@@ -1,0 +1,151 @@
+/* style for all .php files */
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    /* background-image: url("https://unsplash.com/photos/6fF-Ojxov6o"); */
+
+}
+
+body {
+    /* font-size: 40px; */
+    background-image: url(https://www.istockphoto.com/photo/travel-company-bus-gm1197014116-341616290);
+}
+/* some of class and id selectors are strange. I named it */
+/* Style for index.php */
+
+/* div tag has index_container */
+
+.index_container {
+    background-color: #242582;
+    color: aliceblue;
+    border: 2px solid rgb(255, 255, 255);
+    border-radius: 30px;
+    text-align: center;
+    margin: 100px 250px 100px 250px;
+    padding: 30px;
+}
+
+.index_btn {
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.index_btn:hover {
+    /* text-transform: none; */
+    color: rgb(255, 255, 255);
+    background-color: #f64c72;
+    font-size: 20px;
+}
+
+/* style for currentpass.php file */
+
+.current_pass_container {
+    background-color: #242582;
+    color: aliceblue;
+    border: 2px solid rgb(255, 255, 255);
+    border-radius: 30px;
+    text-align: center;
+    margin: 100px 250px 100px 250px;
+    padding: 30px;
+}
+
+.currentpass_btn {
+    font-weight: bold;
+    text-align: right;
+}
+
+.currentpass_btn:hover {
+    color: rgb(255, 255, 255);
+    background-color: #f64c72;
+    font-size: 20px;
+}
+
+/* style for login.php */
+
+.login_container {
+    background-color: #242582;
+    color: aliceblue;
+    border: 2px solid rgb(255, 255, 255);
+    border-radius: 30px;
+    text-align: center;
+    margin: 90px 250px 100px 250px;
+    padding: 30px;
+}
+
+.login_btn {
+    font-weight: bold;
+}
+
+.login_btn:hover {
+    color: rgb(255, 255, 255);
+    background-color: #f64c72;
+    font-size: 20px;
+}  
+
+/* style for newpass.php */
+
+.newpass_container {
+    background-color: #242582;
+    color: aliceblue;
+    border: 2px solid rgb(255, 255, 255);
+    border-radius: 30px;
+    text-align: center;
+    margin: 90px 250px 100px 250px;
+    padding: 30px;
+}
+
+.newpass_btn {
+    font-weight: bold;
+}
+
+.newpass_btn:hover {
+    color: rgb(255, 255, 255);
+    background-color: #f64c72;
+    font-size: 20px;
+}
+
+/* style for payment.php file */
+
+.payment_container {
+    background-color: #242582;
+    color: aliceblue;
+    border: 2px solid rgb(255, 255, 255);
+    border-radius: 30px;
+    text-align: center;
+    margin: 90px 250px 100px 250px;
+    padding: 30px;
+}
+
+.payment_btn {
+    font-weight: bold;
+}
+
+.payment_btn:hover {
+    color: rgb(255, 255, 255);
+    background-color: #f64c72;
+    font-size: 20px;
+}
+
+/* style for signup.php file */
+
+.signup_container {
+    background-color: #242582;
+    color: aliceblue;
+    border: 2px solid rgb(255, 255, 255);
+    border-radius: 30px;
+    text-align: center;
+    margin: 90px 250px 100px 250px;
+    padding: 30px;
+}
+
+.signup_btn {
+    font-weight: bold;
+}
+
+.signup_btn:hover {
+    color: rgb(255, 255, 255);
+    background-color: #f64c72;
+    font-size: 20px;
+}

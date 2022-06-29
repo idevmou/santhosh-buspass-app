@@ -1,0 +1,61 @@
+<?php require_once 'controllers/authControllers.php'; 
+
+// if(!isset($_SESSION['id'])){
+//     header("location : login.php");
+//     // exit();
+// }
+if(empty($_SESSION['id'])){
+    header('location:login.php');
+}
+
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>home page</title>
+    <!-- Exrernal style sheets -->
+    <link rel="stylesheet" href="\css\style.css">
+</head>
+<body>
+    <?php if(isset($_SESSION['message'])): ?>
+    <div class="alert <?php echo $_SESSION['alert-class'];?>">
+        <?php 
+        echo $_SESSION['message'];
+        unset($_SESSION['message']);
+        unset($_SESSION['alert-class']);
+        ?>
+    </div>
+    <?php endif;?>
+    <div class="index_container">
+        <button class="index_btn"><a href="index.php?logout=1" class="logout_btn">logout</a></button>
+        <br>
+    <div><h3>welcome !<?php echo $_SESSION['username'];?></h3></div>
+    <?php if( $_SESSION['verified']):?>
+    verify your email here
+    <strong><?php echo $_SESSION['email'];?></strong>
+    <div>
+        <?php endif; ?>
+
+    <?php if($_SESSION['verified']):?>
+        <button >i am verified</button>
+        <br>
+    </div>
+    <?php endif; ?>
+    <img src=".img/bus.jpg" alt="">
+    <div>
+        <div>
+            <button id="newpass" class="index_btn"><a href="newpass.php">New Pass</a></button>
+            <br>
+        </div>
+        <div>
+            <button id="current" class="index_btn"><a href="currentpass.php">Current Pass</a></button>
+        </div>
+    </div>
+    </div>
+    
+</body>
+</html>

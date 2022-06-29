@@ -1,0 +1,101 @@
+<!-- <?php  require_once 'controllers/authControllers.php'?>
+
+<?php  require_once 'controllers/paymentControllers.php'?> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>current pass</title>
+    <!-- Exrernal style sheets -->
+    <link rel="stylesheet" href="css\style.css">
+    <script type="text/javascript">
+      function dateFormat(d,frmt) {
+        const date =new Date(d);
+        const day =date.getDate();
+        const month =date.getMonth();
+        const year =date.getFullYear();
+
+        format=format.replace("MM",month.toString().padStart(2,"0"));
+        if(format.indexOf("yyyy")>-1){
+          format=format.replace("yyyy",year.toString());
+        }
+        else if(format.indexOf("yy")>-1){
+          format=format.replace("yy",year.toString().substr(2,2));
+        }
+        format=format.replace("dd",day.toString().padStart(2,"0"));
+
+        return format;
+
+        // var date=new Date(x);
+        // alert("hello"+date.getFullYear());
+
+        //document.write(x);
+      }
+    </script>
+</head>
+<body>
+    <div class="current_pass_container">
+      <h1>current pass</h1>
+    
+      <div style=" box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2); transition: 0.3s;">
+      <!-- <img src="img_avatar.png" alt="Avatar" style="width:100%"> -->
+      <div style="padding: 2px 16px;">
+      
+      <table class="table table-bordered">
+            <tr>
+      
+                <th>id</th>
+                <th>name</th>
+                <th>month</th>
+                <th>route</th>
+            </tr>
+          <!-- <?php
+            $vid=$_SESSION['id'];
+            $SQL="SELECT userid,name,month ,route from payment Where userid='$vid' and amountpaid='1'";
+            // $dates="SELECT MONTH(month) from payment where userid='$vid'";
+            $result= $conn->query($SQL);
+            if ($result->num_rows > 0) {
+                // output data of each row
+                while($row = $result->fetch_assoc()) {
+                  // $formonth=$row['month'];
+                 
+                  
+                  // echo $formonth;
+                  // $formonth=<script type="text/javascript">fordate();</script>;
+                  echo "<script>console.log('dateFormat(2021-01-02,MM-dd-yyyy)');</script>";
+                  
+          ?> -->
+          <tr>
+            
+              <td><?php echo $row['userid'];?></td>
+              <td><?php echo $row['name'];?></td>
+              <td><?php echo $row['month'];?></td>
+              <td><?php echo $row['route'];?></td>
+              <br><br>
+              <div class="currentpass_btn">
+                
+                <td><a href="showPass.php"><button class="currentpass_btn" id="change"onClick="changeblue();" > up</button></a></td>
+                <td><a href="showPass.php"><button class="currentpass_btn" id="change"onClick="changeblue();" > down</button></a></td>
+                <td><a href="showPass.php"><button class="currentpass_btn"  onClick="changered();"> ok</button></a></td>
+              
+              </div>
+            
+  
+  </tr>
+  <?php }
+             }
+             ?>
+  </table>   
+      
+      <!-- <form action="currentpass.php" >
+          <input type="text" name="name1" value="<?php echo $_SESSION['username'];?>">
+      </form> -->
+    </div>
+  </div>
+    </div>
+    
+</body>
+</html>

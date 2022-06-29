@@ -1,0 +1,59 @@
+<?php  require_once 'controllers/authControllers.php'?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Exrernal style sheets -->
+    <link rel="stylesheet" href="css\style.css">
+    <title>signup</title>
+
+</head>
+<body>
+    <div class="signup_container">
+        <div class="col-md-4 offset-md-4 form-div">
+
+            <form action="signup.php" method="post">
+                <div>
+                    <h1>Signup</h1>
+                </div>
+                <?php if(count($errors)>0):?>
+                <div class="alert alert-danger">
+                    <?php foreach($errors as $error):?>
+                    <li><?php echo $error; ?></li>
+                    <?php endforeach;?>
+                </div>
+                <?php endif; ?>
+                
+                <div>
+                    <label for="username">Username</label><br>
+                    <input type="text" name="username" value="<?php echo $username?>" placeholder="enter name"><br>
+                </div>
+                <div>
+                    <label for="email">Email</label><br>
+                    <input type="email" name="email" value="<?php echo $email?>" placeholder="enter email"><br>
+                </div>
+                <div>
+                    <label for="password">Password</label><br>
+                    <input type="password" name="password1" placeholder="enter password"><br>
+                </div>
+                <div>
+                    <label for="repassword">Confirm password</label><br>
+                    <input type="password" name="password2" placeholder="re-enter password"><br><br>
+                </div>
+                <div>
+                    <button class="signup_btn" type="submit" name="sign_up">SIGN UP</button>
+                </div>
+                <div>
+    
+                    <p>Already a member? <a href="login.php"> login</a></p>
+                </div>
+            </form>
+        </div>
+    </div>
+    
+</body>
+</html>

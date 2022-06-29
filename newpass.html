@@ -1,0 +1,97 @@
+<?php  require_once 'controllers/authControllers.php'?>
+<?php  require_once 'controllers/paymentControllers.php'?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>new pass</title>
+    <!-- Exrernal style sheets -->
+    <link rel="stylesheet" href="css\style.css">
+    <script type="text/javascript">
+        function setAmount() {
+            var x=document.getElementById("route").value;
+            if (x=="erode to tiruchengode") {
+                document.getElementById("amount").value=200;
+                // console.log("success")
+            }
+             else if (x=="erode to komarapalyam") {
+                document.getElementById("amount").value=100;
+                // console.log("success")
+            }
+            else if (x=="erode to veppadai") {
+                document.getElementById("amount").value=120;
+                // console.log("success")
+            }
+            else if (x=="erode to pallipalayam") {
+                document.getElementById("amount").value=100;
+                // console.log("success")
+            }
+            else if (x=="erode to sangagiri") {
+                document.getElementById("amount").value=220;
+                // console.log("success")
+            }
+        }
+        function paymentSuccess() {
+            // alert("Payment Success")u
+            window("are u want to submit?");
+        }
+    </script>
+    
+</head>
+<body>
+    <div class="newpass_container">
+        <form method="post" action="newpass.php">
+            <div><h1>New pass</h1></div>
+            <?php if(count($errors1)>0):?>
+            <div class="alert alert-danger">
+                <?php foreach($errors1 as $error):?>
+                <li><?php echo $error; ?></li>
+                <?php endforeach;?>
+            </div>
+            <?php endif; ?>
+            <div>
+                <label ></label>
+                <label for="id">User ID</label><br>
+                <input type="number" name="userid" value="<?php echo $_SESSION['id'];?>" readonly><br>
+                <label for="username">username</label><br>
+                <input type="text" name="user" value="<?php echo $_SESSION['username'];?>" required><br>
+                <label for="date">Month</label><br>
+                <input type="date" name="month" required><br>
+                <label for="route">Route</label><br>
+                <select name="route" id="route" onClick="setAmount()">
+                    <option value="erode to tiruchengode" >erode to tiruchengode</option>
+                    <option value="erode to komarapalyam" >erode to komarapalyam</option>
+                    <option value="erode to veppadai" >erode to veppadai</option>
+                    <option value="erode to pallipalayam" >erode to pallipalayam</option>
+                    <option value="erode to sangagiri" >erode to sangagiri</option>
+
+                </select><br>
+
+                <h3>Account details</h3>
+                <label for="holder name">Holder name</label><br>
+                <input type="text" name="holdername" placeholder="John A" required><br>
+                <label for="acnum">Account number</label><br>
+                <input type="number" name="acnum" placeholder="0000-0000-0000" required><br>
+            
+                <label for="cvv">CVV number</label><br>
+                <input type="tel" name="cvv" placeholder="123" required inputmode="numeric" pattern="[0-9\s]{3,3}" maxlength="3"><br>
+                <label for="expiry date">Expiry date</label><br>
+                <input type="month" name="expiry" placeholder="Jan 2024" required><br>
+                <!-- <input type="text" name="route"><br> -->
+                <!-- <label for="month">Month</label><br> -->
+                <!-- <input type="month" name="month"><br> -->
+                <label for="amount">Amout</label><br>
+                <input type="number" name="amount" id="amount" readonly><br>
+                
+                <button class="newpass_btn"><a href="index.php"> Back</a></button><br>
+                <!-- <button type="submit" name="payment_btn" >Pay</button> -->
+                <input onClick=" paymentSuccess()" class="newpass_btn" type="submit" value="submit" name="payment_btn"  >
+                
+            </div>
+        </form>
+    </div>
+</body>
+</html>
